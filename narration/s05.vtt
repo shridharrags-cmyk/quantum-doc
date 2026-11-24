@@ -1,0 +1,260 @@
+1
+00:00:00,050 --> 00:00:01,612
+So where are we, actually?
+
+2
+00:00:01,612 --> 00:00:08,200
+The honest answer is: further than the headlines suggest, and much further from the finish line than the headlines imply.
+
+3
+00:00:08,200 --> 00:00:12,287
+There are now five or six serious approaches, and none of them has won.
+
+4
+00:00:12,287 --> 00:00:15,100
+Superconducting circuits are the most mature.
+
+5
+00:00:15,100 --> 00:00:18,525
+Google, IBM, and a cluster of startups use them.
+
+6
+00:00:18,525 --> 00:00:25,212
+They are fast, with gates in nanoseconds, and they are manufactured with the tools of the semiconductor industry.
+
+7
+00:00:25,212 --> 00:00:27,150
+Their weakness is wiring.
+
+8
+00:00:27,150 --> 00:00:34,525
+Every qubit needs control lines, and at a million qubits the wiring problem becomes a manufacturing problem of its own.
+
+9
+00:00:34,525 --> 00:00:40,400
+IBM's answer is to move the control electronics into the fridge, stacked in layers above the chip.
+
+10
+00:00:40,400 --> 00:00:42,487
+Trapped ions are the most precise.
+
+11
+00:00:42,487 --> 00:00:48,962
+Quantinuum's machines hold a handful of ions in an electromagnetic trap and manipulate them with lasers.
+
+12
+00:00:48,962 --> 00:00:56,900
+Their gate fidelities are the best in the world, above ninety-nine point nine percent, in some cases above ninety-nine point nine nine.
+
+13
+00:00:56,900 --> 00:00:58,525
+Their weakness is speed.
+
+14
+00:00:58,525 --> 00:01:01,575
+Gates take microseconds, not nanoseconds.
+
+15
+00:01:01,575 --> 00:01:07,312
+And scaling means shuttling ions around a trap, which is delicate, brilliant, and slow.
+
+16
+00:01:07,312 --> 00:01:10,075
+Neutral atoms are the fastest-moving field.
+
+17
+00:01:10,075 --> 00:01:19,962
+Instead of ions, you trap neutral atoms in arrays of laser light, optical tweezers, and you can arrange hundreds or thousands of them in arbitrary patterns.
+
+18
+00:01:19,962 --> 00:01:28,137
+In twenty twenty-three, a Harvard-led team used this approach to demonstrate forty-eight logical qubits, and the numbers have been climbing since.
+
+19
+00:01:28,137 --> 00:01:35,362
+The weakness is that neutral-atom gates are slower and less precise than ion traps, and the lasers are power-hungry.
+
+20
+00:01:35,362 --> 00:01:37,225
+Photonic machines use light.
+
+21
+00:01:37,225 --> 00:01:43,100
+They are attractive because photons don't decohere easily and they can travel down optical fibre.
+
+22
+00:01:43,100 --> 00:01:51,862
+PsiQuantum is trying to build a fault-tolerant machine with silicon photonics, and has said it aims for a utility-scale system before the end of the decade.
+
+23
+00:01:51,862 --> 00:01:59,250
+The weakness is that photons don't interact with each other easily, which makes two-qubit gates hard, and loss is brutal.
+
+24
+00:01:59,250 --> 00:02:03,162
+And then there is Microsoft, which is trying something entirely different.
+
+25
+00:02:03,162 --> 00:02:08,237
+In February twenty twenty-five, Microsoft announced a chip called Majorana 1.
+
+26
+00:02:08,237 --> 00:02:10,887
+It was not a general-purpose quantum processor.
+
+27
+00:02:10,887 --> 00:02:16,575
+It was a demonstration of a new kind of qubit, based on a particle called a Majorana fermion.
+
+28
+00:02:16,575 --> 00:02:23,387
+A particle that is its own antiparticle, predicted in nineteen thirty-seven, never definitively observed.
+
+29
+00:02:23,387 --> 00:02:25,737
+Microsoft's claim was extraordinary.
+
+30
+00:02:25,737 --> 00:02:32,087
+Topological qubits are protected by the topology of the material itself, not by careful control.
+
+31
+00:02:32,087 --> 00:02:34,900
+They should be far more stable than any other kind.
+
+32
+00:02:34,900 --> 00:02:39,212
+If they work, they could skip the error-correction problem almost entirely.
+
+33
+00:02:39,212 --> 00:02:44,787
+The announcement was met with excitement and deep scepticism, in roughly equal measure.
+
+34
+00:02:44,787 --> 00:02:52,000
+The company published a paper in Nature describing the physics, but the paper did not demonstrate a working topological qubit.
+
+35
+00:02:52,000 --> 00:02:54,925
+It demonstrated evidence for the material platform.
+
+36
+00:02:54,925 --> 00:03:02,925
+Independent physicists pointed out that the central signature, the presence of Majorana modes, has been claimed before and retracted.
+
+37
+00:03:02,925 --> 00:03:08,837
+Microsoft itself had a paper retracted in twenty eighteen after the data could not be reproduced.
+
+38
+00:03:08,837 --> 00:03:09,775
+Is it real?
+
+39
+00:03:09,775 --> 00:03:12,275
+The honest answer is: not yet proven.
+
+40
+00:03:12,275 --> 00:03:16,037
+The company says it will have a scalable machine by the end of the decade.
+
+41
+00:03:16,037 --> 00:03:20,150
+The physics community is watching, and waiting, and not convinced.
+
+42
+00:03:20,150 --> 00:03:21,562
+That is not cynicism.
+
+43
+00:03:21,562 --> 00:03:23,125
+It is how the field works.
+
+44
+00:03:23,125 --> 00:03:29,112
+Quantum computing has a long history of beautiful claims that did not survive contact with a lab.
+
+45
+00:03:29,112 --> 00:03:33,387
+The same month, Amazon announced a different approach: cat qubits.
+
+46
+00:03:33,387 --> 00:03:40,987
+A cat qubit is a superconducting circuit designed so that one kind of error, bit flips, is exponentially suppressed.
+
+47
+00:03:40,987 --> 00:03:45,850
+Amazon claimed a prototype with up to ninety percent reduction in that error channel.
+
+48
+00:03:45,850 --> 00:03:50,675
+It is a real result, on a small device, and it addresses one half of the problem.
+
+49
+00:03:50,675 --> 00:03:53,675
+The other half, phase errors, remains.
+
+50
+00:03:53,675 --> 00:03:55,737
+So the race is not a single race.
+
+51
+00:03:55,737 --> 00:04:00,162
+It is a set of parallel bets on physics, and nobody knows which one pays.
+
+52
+00:04:00,162 --> 00:04:02,575
+What is not in doubt is the consequence.
+
+53
+00:04:02,690 --> 00:04:12,465
+In August twenty twenty-four, NIST finalised the first post-quantum encryption standards: three algorithms designed to resist an attack by a quantum computer.
+
+54
+00:04:12,465 --> 00:04:16,215
+ML-KEM, ML-DSA, SLH-DSA.
+
+55
+00:04:16,215 --> 00:04:20,677
+They are already being deployed in browsers, phones, and secure messaging.
+
+56
+00:04:20,677 --> 00:04:24,565
+The reason is not that quantum computers can break encryption today.
+
+57
+00:04:24,565 --> 00:04:25,540
+They cannot.
+
+58
+00:04:25,540 --> 00:04:28,415
+The reason is harvest now, decrypt later.
+
+59
+00:04:28,415 --> 00:04:32,565
+An adversary can record encrypted traffic today and wait.
+
+60
+00:04:32,565 --> 00:04:38,627
+If a large quantum computer arrives in fifteen years, everything recorded now becomes readable.
+
+61
+00:04:38,627 --> 00:04:44,990
+That is a strange kind of threat, because it is the first cryptographic threat that is entirely about the future.
+
+62
+00:04:44,990 --> 00:04:47,102
+It assumes the machine will exist.
+
+63
+00:04:47,102 --> 00:04:49,627
+It prepares for the possibility that it won't.
+
+64
+00:04:49,627 --> 00:04:53,677
+And that, in a way, is the whole story of quantum computing.
+
+65
+00:04:53,677 --> 00:04:58,665
+We are building a technology on a bet about physics that we cannot yet fully verify.
+

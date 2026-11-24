@@ -1,0 +1,288 @@
+1
+00:00:00,050 --> 00:00:04,675
+The problem is called decoherence, and it is not a small engineering detail.
+
+2
+00:00:04,675 --> 00:00:07,275
+It is the central fact of quantum computing.
+
+3
+00:00:07,275 --> 00:00:10,237
+A qubit is a quantum system with two states.
+
+4
+00:00:10,237 --> 00:00:12,700
+Not a bit that is both zero and one.
+
+5
+00:00:12,700 --> 00:00:13,925
+That is a cartoon.
+
+6
+00:00:13,925 --> 00:00:22,225
+A qubit is a system described by two complex numbers, amplitudes, whose squares give the probability of measuring zero or one.
+
+7
+00:00:22,225 --> 00:00:25,162
+Before measurement, it can be in a superposition.
+
+8
+00:00:25,162 --> 00:00:27,037
+After measurement, it is not.
+
+9
+00:00:27,037 --> 00:00:29,387
+Everything in between is coherence.
+
+10
+00:00:29,387 --> 00:00:35,887
+The amplitudes have to stay in a precise relationship, with a precise phase, for the computation to work.
+
+11
+00:00:35,887 --> 00:00:38,862
+And almost everything destroys that relationship.
+
+12
+00:00:38,862 --> 00:00:40,162
+A stray photon.
+
+13
+00:00:40,162 --> 00:00:41,487
+A vibrating atom.
+
+14
+00:00:41,487 --> 00:00:42,675
+A cosmic ray.
+
+15
+00:00:42,675 --> 00:00:43,350
+Heat.
+
+16
+00:00:43,350 --> 00:00:45,262
+So the first thing you need is cold.
+
+17
+00:00:45,262 --> 00:00:46,787
+Not refrigerator cold.
+
+18
+00:00:46,787 --> 00:00:48,225
+Ten millikelvin.
+
+19
+00:00:48,225 --> 00:00:52,900
+Colder than the cosmic microwave background, which is two point seven kelvin.
+
+20
+00:00:52,900 --> 00:00:55,287
+Colder than anything in the solar system.
+
+21
+00:00:55,287 --> 00:00:57,712
+That is what a dilution refrigerator is for.
+
+22
+00:00:57,712 --> 00:01:07,425
+It is the machine you have seen in photographs without knowing what you were looking at: a gold-plated chandelier, hanging in a cylinder, surrounded by layers of shielding.
+
+23
+00:01:07,425 --> 00:01:14,562
+At the bottom, a chip the size of a fingernail, sitting at a temperature where the thermal noise is slower than the computation.
+
+24
+00:01:14,562 --> 00:01:16,875
+The second thing you need is isolation.
+
+25
+00:01:16,875 --> 00:01:21,887
+The chip is shielded from magnetic fields, from radio waves, from vibration.
+
+26
+00:01:21,887 --> 00:01:24,450
+The room around it is a Faraday cage.
+
+27
+00:01:24,450 --> 00:01:33,812
+The wiring that carries signals in is filtered, attenuated, and carefully routed, because a single stray microwave photon can ruin a calculation.
+
+28
+00:01:33,812 --> 00:01:35,825
+And the third thing you need is speed.
+
+29
+00:01:35,825 --> 00:01:40,950
+A superconducting qubit holds its state for tens or hundreds of microseconds.
+
+30
+00:01:40,950 --> 00:01:43,425
+A gate takes tens of nanoseconds.
+
+31
+00:01:43,425 --> 00:01:45,375
+That is a ratio of thousands.
+
+32
+00:01:45,375 --> 00:01:49,300
+You have time for a few thousand operations before the state decays.
+
+33
+00:01:49,300 --> 00:01:50,475
+Not millions.
+
+34
+00:01:50,475 --> 00:01:51,412
+Thousands.
+
+35
+00:01:51,412 --> 00:01:54,087
+This is why error correction is not optional.
+
+36
+00:01:54,087 --> 00:01:57,475
+The first real qubits were built in the late nineteen nineties.
+
+37
+00:01:57,475 --> 00:02:06,137
+In nineteen ninety-five, Juan Ignacio Cirac and Peter Zoller proposed a way to trap ions with electric fields and manipulate them with lasers.
+
+38
+00:02:06,137 --> 00:02:13,687
+In nineteen ninety-nine, a team at NEC in Japan, led by Yasunobu Nakamura, built a superconducting qubit.
+
+39
+00:02:13,687 --> 00:02:18,400
+A tiny circuit with a Josephson junction, behaving like an artificial atom.
+
+40
+00:02:18,400 --> 00:02:20,262
+Both approaches are still with us.
+
+41
+00:02:20,262 --> 00:02:26,550
+In two thousand, David DiVincenzo wrote down the five criteria a quantum computer has to satisfy.
+
+42
+00:02:26,550 --> 00:02:28,550
+Qubits that can be initialized.
+
+43
+00:02:28,550 --> 00:02:30,425
+A universal set of gates.
+
+44
+00:02:30,425 --> 00:02:32,012
+Long coherence times.
+
+45
+00:02:32,012 --> 00:02:33,137
+A way to read out.
+
+46
+00:02:33,137 --> 00:02:34,312
+And a way to scale.
+
+47
+00:02:34,312 --> 00:02:36,837
+That list is still the field's report card.
+
+48
+00:02:36,837 --> 00:02:40,187
+For the next fifteen years, the numbers improved slowly.
+
+49
+00:02:40,187 --> 00:02:43,887
+One qubit became two, then five, then twenty.
+
+50
+00:02:43,887 --> 00:02:48,887
+Fidelities climbed from ninety percent to ninety-nine, then ninety-nine point nine.
+
+51
+00:02:48,887 --> 00:02:52,925
+Each decimal place was a thesis, a career, a decade.
+
+52
+00:02:52,925 --> 00:03:01,362
+And then, in twenty nineteen, Google put a machine called Sycamore in front of the world and claimed it had done something no classical computer could do.
+
+53
+00:03:01,362 --> 00:03:04,687
+Sycamore had fifty-three superconducting qubits.
+
+54
+00:03:04,687 --> 00:03:10,575
+The task was random circuit sampling: run a random sequence of gates, measure, repeat.
+
+55
+00:03:10,575 --> 00:03:12,350
+It is deliberately useless.
+
+56
+00:03:12,350 --> 00:03:14,850
+It produces no answer anyone wants.
+
+57
+00:03:14,850 --> 00:03:16,300
+It is a stress test.
+
+58
+00:03:16,300 --> 00:03:23,137
+A way of asking whether the machine can hold a quantum state long enough to do something a classical computer cannot follow.
+
+59
+00:03:23,137 --> 00:03:29,412
+Google said Sycamore had done in two hundred seconds what would take a classical supercomputer ten thousand years.
+
+60
+00:03:29,412 --> 00:03:31,612
+IBM immediately disagreed.
+
+61
+00:03:31,612 --> 00:03:37,987
+Their analysis said the same calculation could be done on a classical machine in two and a half days.
+
+62
+00:03:37,987 --> 00:03:39,575
+Not ten thousand years.
+
+63
+00:03:39,575 --> 00:03:40,962
+Two and a half days.
+
+64
+00:03:40,962 --> 00:03:42,725
+Both numbers were defensible.
+
+65
+00:03:42,725 --> 00:03:45,012
+That is the problem with the word supremacy.
+
+66
+00:03:45,012 --> 00:03:47,900
+The claim was not that quantum computers are useful.
+
+67
+00:03:47,900 --> 00:03:50,400
+It was that a quantum machine had crossed a line.
+
+68
+00:03:50,400 --> 00:03:57,525
+And the line kept moving, because classical algorithms kept getting better, and classical hardware kept getting faster.
+
+69
+00:03:57,626 --> 00:04:01,126
+What survived the argument was something more interesting than the claim.
+
+70
+00:04:01,126 --> 00:04:08,201
+Sycamore proved that a programmable quantum machine with more than fifty qubits could be built, calibrated, and run.
+
+71
+00:04:08,201 --> 00:04:10,501
+It proved that the engineering was real.
+
+72
+00:04:10,501 --> 00:04:13,326
+The theory had been waiting thirty-five years for that.
+

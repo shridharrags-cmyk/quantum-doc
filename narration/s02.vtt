@@ -1,0 +1,320 @@
+1
+00:00:00,050 --> 00:00:03,812
+For thirty years after Solvay, quantum mechanics was a tool.
+
+2
+00:00:03,812 --> 00:00:04,687
+It worked.
+
+3
+00:00:04,687 --> 00:00:10,225
+It predicted the spectra of atoms, the behaviour of semiconductors, the colour of the sky.
+
+4
+00:00:10,225 --> 00:00:17,200
+Physicists used it every day and argued about its foundations at conferences, and the two activities barely touched.
+
+5
+00:00:17,200 --> 00:00:24,450
+Then in nineteen sixty-one, an IBM engineer named Rolf Landauer noticed something that should have been obvious, and wasn't.
+
+6
+00:00:24,450 --> 00:00:26,050
+Information is physical.
+
+7
+00:00:26,050 --> 00:00:30,525
+If you store a bit, a one or a zero, you need something to store it in.
+
+8
+00:00:30,525 --> 00:00:33,175
+A magnet, a charge, a photon.
+
+9
+00:00:33,175 --> 00:00:36,925
+And if you erase that bit, you have to dump the information somewhere.
+
+10
+00:00:36,925 --> 00:00:43,762
+Landauer calculated the cost: at least the thermal energy of the bit, multiplied by the natural log of two.
+
+11
+00:00:43,762 --> 00:00:44,937
+A tiny number.
+
+12
+00:00:44,937 --> 00:00:46,050
+But not zero.
+
+13
+00:00:46,050 --> 00:00:51,187
+Erasing information is not free, because information is not abstract.
+
+14
+00:00:51,187 --> 00:00:53,812
+It is a physical state of a physical system.
+
+15
+00:00:53,812 --> 00:00:55,800
+To destroy it, you have to pay.
+
+16
+00:00:55,800 --> 00:00:58,600
+That idea travelled quietly for a decade.
+
+17
+00:00:58,600 --> 00:01:10,262
+In nineteen seventy-three, Charles Bennett at IBM took it further: if erasing is what costs energy, then a computation that never erases anything could, in principle, be free.
+
+18
+00:01:10,262 --> 00:01:11,937
+Reversible computation.
+
+19
+00:01:11,937 --> 00:01:15,600
+Logic gates that run backwards as easily as forwards.
+
+20
+00:01:15,600 --> 00:01:17,850
+Bennett was thinking about thermodynamics.
+
+21
+00:01:17,850 --> 00:01:19,112
+He got something else.
+
+22
+00:01:19,112 --> 00:01:23,187
+Because a reversible gate is a gate that keeps all of its inputs.
+
+23
+00:01:23,187 --> 00:01:25,025
+It doesn't throw anything away.
+
+24
+00:01:25,025 --> 00:01:34,612
+And in nineteen eighty, a young physicist named Paul Benioff pointed out that a quantum system, evolving according to Schrodinger's equation, is also reversible.
+
+25
+00:01:34,612 --> 00:01:37,225
+The equation runs backwards perfectly.
+
+26
+00:01:37,225 --> 00:01:39,937
+So why not build a computer out of quantum systems?
+
+27
+00:01:39,937 --> 00:01:42,162
+Benioff's paper was almost ignored.
+
+28
+00:01:42,162 --> 00:01:44,787
+It was too early, and it was too strange.
+
+29
+00:01:44,787 --> 00:01:46,987
+But it was the first sketch of the idea.
+
+30
+00:01:46,987 --> 00:01:52,650
+The idea got its voice in nineteen eighty-one, at a conference in Boston, from Richard Feynman.
+
+31
+00:01:52,650 --> 00:01:55,075
+Feynman was not trying to invent a computer.
+
+32
+00:01:55,075 --> 00:01:57,000
+He was trying to simulate physics.
+
+33
+00:01:57,000 --> 00:01:58,562
+And he had noticed a problem.
+
+34
+00:01:58,562 --> 00:02:06,687
+A classical computer simulating a quantum system has to track every possible state, and the number of possible states grows exponentially.
+
+35
+00:02:06,687 --> 00:02:09,612
+Thirty particles, and you are already out of memory.
+
+36
+00:02:09,612 --> 00:02:14,487
+Three hundred, and you need more bits than there are atoms in the observable universe.
+
+37
+00:02:14,487 --> 00:02:16,975
+Feynman's suggestion was almost cheeky.
+
+38
+00:02:16,975 --> 00:02:23,637
+If a classical computer is too slow to simulate quantum mechanics, build a computer that is quantum mechanical.
+
+39
+00:02:23,637 --> 00:02:25,637
+Let nature do the calculation.
+
+40
+00:02:25,637 --> 00:02:33,550
+"Nature isn't classical, dammit," he said, "and if you want to make a simulation of nature, you'd better make it quantum mechanical."
+
+41
+00:02:33,550 --> 00:02:34,700
+The room laughed.
+
+42
+00:02:34,700 --> 00:02:35,837
+He wasn't joking.
+
+43
+00:02:35,837 --> 00:02:42,837
+In nineteen eighty-five, David Deutsch, a young physicist at Oxford, turned Feynman's suggestion into a theory.
+
+44
+00:02:42,837 --> 00:02:52,487
+He described a machine that could simulate any physical process, a universal quantum computer, and showed that it could do things no classical computer could do efficiently.
+
+45
+00:02:52,487 --> 00:02:54,237
+Not just simulate physics.
+
+46
+00:02:54,237 --> 00:02:55,075
+Compute.
+
+47
+00:02:55,075 --> 00:02:58,062
+Deutsch's paper is where the field really begins.
+
+48
+00:02:58,062 --> 00:03:01,775
+It is also where the trouble begins, because Deutsch was careful.
+
+49
+00:03:01,775 --> 00:03:03,450
+He said the machine would work.
+
+50
+00:03:03,450 --> 00:03:05,175
+He did not say how to build one.
+
+51
+00:03:05,175 --> 00:03:12,212
+Then in nineteen ninety-four, a mathematician at Bell Labs named Peter Shor found the first thing that would actually be worth building.
+
+52
+00:03:12,212 --> 00:03:16,487
+Shor was working on a problem that had been open for centuries: factoring.
+
+53
+00:03:16,487 --> 00:03:20,825
+Given a large number, find the primes that multiply together to make it.
+
+54
+00:03:20,825 --> 00:03:23,762
+Classical computers can do it, but slowly.
+
+55
+00:03:23,762 --> 00:03:27,450
+Double the size of the number, and the time roughly doubles with it.
+
+56
+00:03:27,450 --> 00:03:33,075
+For a six hundred digit number, the best algorithms would take longer than the age of the universe.
+
+57
+00:03:33,075 --> 00:03:37,450
+Shor found a way to do it in polynomial time, if you had a quantum computer.
+
+58
+00:03:37,450 --> 00:03:41,287
+Not a small improvement, an entirely different scaling law.
+
+59
+00:03:41,287 --> 00:03:47,737
+A six hundred digit number becomes a few hours of work, on a machine with twenty million physical qubits.
+
+60
+00:03:47,858 --> 00:03:51,433
+The reason it works is beautiful, and worth stating plainly.
+
+61
+00:03:51,433 --> 00:03:58,008
+Factoring is really a question about periodicity: find the repeating pattern hidden in the powers of a number.
+
+62
+00:03:58,008 --> 00:04:05,895
+And a quantum computer is very good at finding repeating patterns, because it can be in many states at once, and those states interfere.
+
+63
+00:04:05,895 --> 00:04:07,970
+Interference is the whole trick.
+
+64
+00:04:07,970 --> 00:04:09,758
+Not parallel universes.
+
+65
+00:04:09,758 --> 00:04:10,795
+Not magic.
+
+66
+00:04:10,795 --> 00:04:13,008
+Waves adding up and cancelling out.
+
+67
+00:04:13,008 --> 00:04:15,820
+A quantum computer is an interference machine.
+
+68
+00:04:15,820 --> 00:04:21,645
+It sets up a superposition in which every wrong answer cancels, and the right answer survives.
+
+69
+00:04:21,645 --> 00:04:22,645
+Then you measure.
+
+70
+00:04:22,645 --> 00:04:27,970
+Two years later, Lov Grover found a second trick: searching an unsorted list.
+
+71
+00:04:27,970 --> 00:04:30,783
+A classical computer has to check every item.
+
+72
+00:04:30,783 --> 00:04:35,183
+A quantum computer can do it in about the square root of the number of steps.
+
+73
+00:04:35,183 --> 00:04:39,345
+For a billion items, that is thirty thousand steps instead of a billion.
+
+74
+00:04:39,345 --> 00:04:40,620
+Not exponential.
+
+75
+00:04:40,620 --> 00:04:41,795
+Still enormous.
+
+76
+00:04:41,795 --> 00:04:47,108
+By nineteen ninety-six, the field had a theory, two algorithms, and no hardware.
+
+77
+00:04:47,108 --> 00:04:54,283
+It had mathematicians, computer scientists, and a growing number of physicists who suspected the whole thing was impossible.
+
+78
+00:04:54,283 --> 00:04:58,795
+Because a quantum computer has a problem that no classical computer has.
+
+79
+00:04:58,795 --> 00:05:02,295
+It is made of the same fragile stuff it is trying to compute with.
+
+80
+00:05:02,295 --> 00:05:05,920
+And the moment it touches the outside world, it falls apart.
+

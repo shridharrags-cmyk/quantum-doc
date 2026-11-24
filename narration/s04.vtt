@@ -1,0 +1,288 @@
+1
+00:00:00,050 --> 00:00:03,487
+Here is the uncomfortable arithmetic of quantum computing.
+
+2
+00:00:03,487 --> 00:00:05,400
+A physical qubit is bad.
+
+3
+00:00:05,400 --> 00:00:06,412
+It fails.
+
+4
+00:00:06,412 --> 00:00:07,512
+Not occasionally.
+
+5
+00:00:07,512 --> 00:00:08,462
+Constantly.
+
+6
+00:00:08,462 --> 00:00:09,850
+Coherence decays.
+
+7
+00:00:09,850 --> 00:00:11,125
+Gates are imperfect.
+
+8
+00:00:11,125 --> 00:00:12,562
+Readout is noisy.
+
+9
+00:00:12,562 --> 00:00:18,687
+The best qubits in the world, in twenty twenty-four, had error rates around one in a thousand per gate.
+
+10
+00:00:18,687 --> 00:00:19,725
+That sounds good.
+
+11
+00:00:19,725 --> 00:00:21,112
+It is catastrophic.
+
+12
+00:00:21,112 --> 00:00:24,050
+A useful algorithm might need a billion gates.
+
+13
+00:00:24,050 --> 00:00:28,975
+At one in a thousand, the computation is destroyed long before it finishes.
+
+14
+00:00:28,975 --> 00:00:31,625
+Even at one in ten thousand, you lose.
+
+15
+00:00:31,625 --> 00:00:35,250
+The solution is not better qubits, though better qubits help.
+
+16
+00:00:35,250 --> 00:00:46,387
+The solution is to stop using physical qubits and start using logical ones: a logical qubit made of many physical qubits, wired together so that they correct each other's errors.
+
+17
+00:00:46,387 --> 00:00:51,312
+This is quantum error correction, and it is the most important idea in the field.
+
+18
+00:00:51,312 --> 00:00:53,787
+The simplest version is the surface code.
+
+19
+00:00:53,787 --> 00:00:55,762
+Imagine a grid of qubits.
+
+20
+00:00:55,762 --> 00:00:56,837
+Some hold data.
+
+21
+00:00:56,837 --> 00:01:00,612
+Some are measured constantly, checking the parity of their neighbours.
+
+22
+00:01:00,612 --> 00:01:03,987
+When a measurement flips, you know something went wrong nearby.
+
+23
+00:01:03,987 --> 00:01:06,262
+You don't know what, and you don't need to.
+
+24
+00:01:06,262 --> 00:01:09,912
+You just need enough checks to localise the error and correct it.
+
+25
+00:01:09,912 --> 00:01:13,975
+The catch: you need a lot of physical qubits per logical qubit.
+
+26
+00:01:13,975 --> 00:01:15,900
+Early estimates were thousands.
+
+27
+00:01:15,900 --> 00:01:17,600
+Later ones, hundreds.
+
+28
+00:01:17,600 --> 00:01:22,262
+And the whole scheme only works if the physical error rate is below a threshold.
+
+29
+00:01:22,262 --> 00:01:24,850
+Roughly one percent, for the surface code.
+
+30
+00:01:24,850 --> 00:01:28,462
+Above the threshold, adding more qubits makes things worse.
+
+31
+00:01:28,462 --> 00:01:31,337
+Below it, adding more qubits makes things better.
+
+32
+00:01:31,337 --> 00:01:32,612
+That is the whole game.
+
+33
+00:01:32,612 --> 00:01:34,800
+Get below threshold, and scale.
+
+34
+00:01:34,800 --> 00:01:38,037
+For twenty years, nobody could get below threshold.
+
+35
+00:01:38,037 --> 00:01:43,025
+The qubits were too noisy, the grids too small, the measurements too slow.
+
+36
+00:01:43,025 --> 00:01:47,362
+In December twenty twenty-four, Google published a result that changed that.
+
+37
+00:01:47,362 --> 00:01:48,962
+The machine was called Willow.
+
+38
+00:01:48,962 --> 00:01:58,937
+It had one hundred and five superconducting qubits, and it was designed to test one thing: whether increasing the size of the error-correcting grid actually reduced the error.
+
+39
+00:01:58,937 --> 00:02:02,800
+They built grids of distance three, five, and seven.
+
+40
+00:02:02,800 --> 00:02:09,350
+A distance seven surface code spends ninety-seven physical qubits to carry one logical qubit.
+
+41
+00:02:09,350 --> 00:02:11,225
+Forty-nine of them hold the data.
+
+42
+00:02:11,225 --> 00:02:13,062
+The rest do nothing but check.
+
+43
+00:02:13,062 --> 00:02:18,387
+And they measured the logical error rate per cycle: zero point one four three percent.
+
+44
+00:02:18,387 --> 00:02:20,837
+That number by itself is not impressive.
+
+45
+00:02:20,837 --> 00:02:22,450
+What matters is the trend.
+
+46
+00:02:22,450 --> 00:02:29,250
+Each time they increased the distance by two, the logical error rate fell by a factor of about two point one four.
+
+47
+00:02:29,250 --> 00:02:30,437
+Not stayed the same.
+
+48
+00:02:30,437 --> 00:02:31,137
+Fell.
+
+49
+00:02:31,137 --> 00:02:36,200
+For the first time, a quantum error-correcting code was performing better as it got bigger.
+
+50
+00:02:36,200 --> 00:02:37,537
+Below threshold.
+
+51
+00:02:37,537 --> 00:02:41,037
+The thing the theory promised, in hardware, on a chip.
+
+52
+00:02:41,037 --> 00:02:45,262
+The same paper included a second result, and this one made headlines.
+
+53
+00:02:45,262 --> 00:02:49,675
+Willow ran a random circuit sampling benchmark in under five minutes.
+
+54
+00:02:49,675 --> 00:02:55,937
+Google estimated that the same calculation would take a classical supercomputer ten septillion years.
+
+55
+00:02:55,937 --> 00:02:58,487
+A one followed by twenty-five zeros.
+
+56
+00:02:58,487 --> 00:03:00,662
+That number is almost meaningless.
+
+57
+00:03:00,662 --> 00:03:06,325
+It is a statement about one benchmark, on one day, against one classical algorithm.
+
+58
+00:03:06,325 --> 00:03:08,825
+It is not a statement about useful computing.
+
+59
+00:03:08,825 --> 00:03:11,050
+Google was careful about this in the paper.
+
+60
+00:03:11,050 --> 00:03:12,275
+The press was not.
+
+61
+00:03:12,275 --> 00:03:15,325
+But the error-correction result is not meaningless.
+
+62
+00:03:15,325 --> 00:03:18,525
+It is the first real evidence that the scaling law works.
+
+63
+00:03:18,525 --> 00:03:23,687
+And scaling laws are how technology stops being a demonstration and starts being a tool.
+
+64
+00:03:23,687 --> 00:03:26,562
+There is a catch, and it is worth saying clearly.
+
+65
+00:03:26,562 --> 00:03:31,637
+A logical qubit that fails once every thousand cycles is not a good qubit.
+
+66
+00:03:31,637 --> 00:03:36,500
+Willow's logical qubit still fails far too often to run a long algorithm.
+
+67
+00:03:36,500 --> 00:03:40,312
+The result is a proof of direction, not a proof of arrival.
+
+68
+00:03:40,312 --> 00:03:52,812
+To run Shor's algorithm against a two thousand bit RSA key, you would need thousands of logical qubits, each made of hundreds of physical qubits, each operating for millions of cycles without failing.
+
+69
+00:03:52,812 --> 00:03:55,412
+That is not one generation of hardware away.
+
+70
+00:03:55,412 --> 00:03:56,575
+It might be three.
+
+71
+00:03:56,575 --> 00:03:59,412
+And yet, the direction is now established.
+
+72
+00:03:59,412 --> 00:04:02,187
+Before Willow, below-threshold was a hope.
+
