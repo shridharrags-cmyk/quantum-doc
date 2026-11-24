@@ -11,14 +11,15 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SR = 48000
 
 # one track per act, and how far into the track that act starts
+# cue per act, chosen so every track outlasts its act (offsets skip intros)
 SCORE = [
-    ("MemoriesOfStone", 0),
-    ("Convergence", 0),
-    ("Unraveling", 20),
-    ("Penumbra", 10),
-    ("TheLongDark", 20),
-    ("Katabasis_I", 30),
-    ("AdriftAmongInfiniteStars", 10),
+    ("Convergence", 0),            # cold open  103 s
+    ("MemoriesOfStone", 30),       # act I      281 s
+    ("Penumbra", 20),              # act II     309 s
+    ("Unraveling", 40),            # act III    256 s
+    ("Katabasis_I", 30),           # act IV     246 s
+    ("TheLongDark", 20),           # act V      301 s
+    ("AdriftAmongInfiniteStars", 20),  # act VI  187 s
 ]
 
 
@@ -42,10 +43,11 @@ def write_wav(path, data, sr=SR):
 
 
 def fit(a, n):
-    """Pad or trim to exactly n samples."""
+    """Pad or trim to exactly n frames, along time only (works for stereo)."""
     if len(a) >= n:
         return a[:n]
-    return np.pad(a, (0, n - len(a)), mode="constant")
+    pad = [(0, n - len(a))] + [(0, 0)] * (a.ndim - 1)
+    return np.pad(a, pad, mode="constant")
 
 
 def main():
@@ -61,7 +63,6 @@ def main():
         i = int(round(a * SR))
         narr[i:i + len(seg)] += seg
     narr = narr[:int(round(total * SR))]
-    write_wav(os.path.join(ROOT, "audio", "narr.wav"), narr)
     print("narration", len(narr) / SR, "s")
 
     # ---- score bed: equal-power crossfade at every act boundary
@@ -70,39 +71,45 @@ def main():
     fade = int(7.0 * SR)
     for i, (name, offset) in enumerate(SCORE):
         a = int(round(starts[i] * SR))
-        b = int(round((ends[i + 1] if i + 1 < len(ends) else total) * SR))
-        need = max(b - a, SR) + fade
+        b = int(round((starts[i + 1] if i + 1 < len(starts) else total) * SR))
+        # each cue runs to the boundary plus one fade, so the next cue's fade-in
+        # and this cue's fade-out overlap: equal power, no hole at the cut
+        need = (b - a) + fade
         path = os.path.join(ROOT, "music", name + ".mp3")
         seg = decode(path, 2)
         seg = fit(seg[offset * SR:], need)
+        fi = fade if i > 0 else int(2.0 * SR)
+        t = np.linspace(0, 1, fi, dtype=np.float32)
+        seg[:fi] *= np.sin(t * math.pi / 2)[:, None]         # fade up
         t = np.linspace(0, 1, fade, dtype=np.float32)
-        if i > 0:
-            seg[:fade] *= np.sin(t * math.pi / 2)[:, None]   # fade up
         seg[-fade:] *= np.cos(t * math.pi / 2)[:, None]      # fade down
         end = min(a + need, n)
         bed[a:end] += seg[:end - a]
     rms = float(np.sqrt((bed ** 2).mean()))
     bed *= (10 ** (-26 / 20)) / max(rms, 1e-9)
-    write_wav(os.path.join(ROOT, "audio", "bed.wav"), bed)
     print("bed rms set to -26 dBFS")
 
     # ---- duck the score under speech (block follower, fast attack, slow release)
-    env = np.abs(narr)
-    k = int(0.03 * SR)
-    env = np.convolve(env, np.ones(k, np.float32) / k, mode="same")
+    blk = 240                                   # 5 ms envelope blocks
+    nb = len(narr) // blk
+    env = np.abs(narr[:nb * blk]).reshape(nb, blk).max(1)
     thr = 0.010
     target = np.clip((env - thr) / (thr * 2.5), 0, 1)
     duck = np.empty_like(target)
-    g, blk = 0.0, 256
-    for i in range(0, len(target), blk):
-        v = float(target[i:i + blk].max())
+    g = 0.0
+    for i in range(nb):
+        v = float(target[i])
         tau = 0.025 if v > g else 0.55
         coef = 1 - math.exp(-blk / (SR * tau))
         g += (v - g) * coef
-        duck[i:i + blk] = g
+        duck[i] = g
+    duck = np.pad(np.repeat(duck, blk), (0, len(narr) - nb * blk), mode="edge")
     gain = (1.0 - duck * (1.0 - 10 ** (-11 / 20)))[:, None]
     mix = narr[:, None] + bed * gain
     mix = np.tanh(mix * 1.02) / 1.02
+    head, tail = int(1.2 * SR), int(6.0 * SR)
+    mix[:head] *= np.linspace(0, 1, head, dtype=np.float32)[:, None]
+    mix[-tail:] *= np.linspace(1, 0, tail, dtype=np.float32)[:, None] ** 1.4
     write_wav(os.path.join(ROOT, "audio", "mix_raw.wav"), mix)
 
     # ---- master
