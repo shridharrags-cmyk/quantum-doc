@@ -1,0 +1,14 @@
+{
+ "fps": 24, "w": 640, "h": 360, "total_frames": 8, "shots": [
+  {"id":"t01","kind":"card","card":"title","title":"The Machine That Borrows the Universe","sub":"Quantum computing · 1900—2026","num":"","frames":58},
+  {"id":"t02","kind":"card","card":"chapter","title":"The reluctant revolution","sub":"1900 — 1935","num":"I","frames":58},
+  {"id":"t03","kind":"photo","plate":"assets/plates/planck.jpg","zoom":[1.02,1.10],"focus":[0.5,0.34],"pan":[0,0],"frames":120,"cap":"Max Planck, 1910","src":"Rudolf Dührkoop · Public domain"},
+  {"id":"t04","kind":"photo","plate":"assets/plates/solvay.jpg","zoom":[1.0,1.07],"focus":[0.5,0.5],"pan":[0,0],"frames":120,"cap":"Fifth Solvay Conference, Brussels, 1927","src":"Benjamin Couprie · Public domain"},
+  {"id":"t05","kind":"photo","plate":"assets/plates/fridge_gold.jpg","zoom":[1.0,1.09],"focus":[0.5,0.5],"pan":[0,0],"frames":120,"cap":"10 millikelvin","src":"Onri Jay Benally · CC BY 4.0"},
+  {"id":"t06","kind":"photo","plate":"assets/plates/chip_200.jpg","zoom":[1.10,1.0],"focus":[0.5,0.5],"pan":[0,0],"frames":120},
+  {"id":"t07","kind":"proc","proc":"bloch","frames":120},
+  {"id":"t08","kind":"proc","proc":"surface","frames":120},
+  {"id":"t09","kind":"proc","proc":"chart","frames":120},
+  {"id":"t10","kind":"proc","proc":"bits","frames":120}
+ ]
+}

@@ -1,0 +1,49 @@
+For thirty years after Solvay, quantum mechanics was a tool. It worked. It predicted the spectra of atoms, the behaviour of semiconductors, the colour of the sky. Physicists used it every day and argued about its foundations at conferences, and the two activities barely touched.
+
+Then in nineteen sixty-one, an IBM engineer named Rolf Landauer noticed something that should have been obvious, and wasn't.
+
+Information is physical.
+
+If you store a bit, a one or a zero, you need something to store it in. A magnet, a charge, a photon. And if you erase that bit, you have to dump the information somewhere. Landauer calculated the cost: at least the thermal energy of the bit, multiplied by the natural log of two. A tiny number. But not zero.
+
+Erasing information is not free, because information is not abstract. It is a physical state of a physical system. To destroy it, you have to pay.
+
+That idea travelled quietly for a decade. In nineteen seventy-three, Charles Bennett at IBM took it further: if erasing is what costs energy, then a computation that never erases anything could, in principle, be free. Reversible computation. Logic gates that run backwards as easily as forwards.
+
+Bennett was thinking about thermodynamics. He got something else.
+
+Because a reversible gate is a gate that keeps all of its inputs. It doesn't throw anything away. And in nineteen eighty, a young physicist named Paul Benioff pointed out that a quantum system, evolving according to Schrodinger's equation, is also reversible. The equation runs backwards perfectly. So why not build a computer out of quantum systems?
+
+Benioff's paper was almost ignored. It was too early, and it was too strange. But it was the first sketch of the idea.
+
+The idea got its voice in nineteen eighty-one, at a conference in Boston, from Richard Feynman.
+
+Feynman was not trying to invent a computer. He was trying to simulate physics. And he had noticed a problem. A classical computer simulating a quantum system has to track every possible state, and the number of possible states grows exponentially. Thirty particles, and you are already out of memory. Three hundred, and you need more bits than there are atoms in the observable universe.
+
+Feynman's suggestion was almost cheeky. If a classical computer is too slow to simulate quantum mechanics, build a computer that is quantum mechanical. Let nature do the calculation.
+
+"Nature isn't classical, dammit," he said, "and if you want to make a simulation of nature, you'd better make it quantum mechanical."
+
+The room laughed. He wasn't joking.
+
+In nineteen eighty-five, David Deutsch, a young physicist at Oxford, turned Feynman's suggestion into a theory. He described a machine that could simulate any physical process, a universal quantum computer, and showed that it could do things no classical computer could do efficiently. Not just simulate physics. Compute.
+
+Deutsch's paper is where the field really begins. It is also where the trouble begins, because Deutsch was careful. He said the machine would work. He did not say how to build one.
+
+Then in nineteen ninety-four, a mathematician at Bell Labs named Peter Shor found the first thing that would actually be worth building.
+
+Shor was working on a problem that had been open for centuries: factoring. Given a large number, find the primes that multiply together to make it. Classical computers can do it, but slowly. Double the size of the number, and the time roughly doubles with it. For a six hundred digit number, the best algorithms would take longer than the age of the universe.
+
+Shor found a way to do it in polynomial time, if you had a quantum computer. Not a small improvement, an entirely different scaling law. A six hundred digit number becomes a few hours of work, on a machine with twenty million physical qubits.
+
+The reason it works is beautiful, and worth stating plainly. Factoring is really a question about periodicity: find the repeating pattern hidden in the powers of a number. And a quantum computer is very good at finding repeating patterns, because it can be in many states at once, and those states interfere.
+
+Interference is the whole trick. Not parallel universes. Not magic. Waves adding up and cancelling out.
+
+A quantum computer is an interference machine. It sets up a superposition in which every wrong answer cancels, and the right answer survives. Then you measure.
+
+Two years later, Lov Grover found a second trick: searching an unsorted list. A classical computer has to check every item. A quantum computer can do it in about the square root of the number of steps. For a billion items, that is thirty thousand steps instead of a billion. Not exponential. Still enormous.
+
+By nineteen ninety-six, the field had a theory, two algorithms, and no hardware. It had mathematicians, computer scientists, and a growing number of physicists who suspected the whole thing was impossible.
+
+Because a quantum computer has a problem that no classical computer has. It is made of the same fragile stuff it is trying to compute with. And the moment it touches the outside world, it falls apart.

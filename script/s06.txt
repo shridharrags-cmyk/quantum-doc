@@ -1,0 +1,33 @@
+So let's be honest about the ledger.
+
+What a quantum computer will probably do, if it works.
+
+It will simulate molecules. Not approximately, the way classical computers do, but natively, because a molecule is a quantum system, and the machine speaks its language. That could mean better catalysts, better batteries, better fertiliser. Nitrogen fixation alone consumes about one to two percent of the world's energy, and a quantum computer might find a catalyst that does it at room temperature.
+
+It will break some encryption, and it will help build better encryption. Both. That is not a contradiction. It is what happens when you change the rules of computation.
+
+It will probably not make your phone faster. It will not run video games. It will not replace your laptop. For almost everything, a classical computer is better, and will stay better. A quantum computer is a specialised instrument, like a particle accelerator or a telescope. You don't put one in your pocket. You build one, and you point it at a problem.
+
+What it might do, and this is the part that matters.
+
+It might fail. Not because the physics is wrong, but because the engineering is too hard. The wiring, the cooling, the error rates, the cost. There is a real chance that in fifty years, quantum computing is remembered the way we remember fusion: always thirty years away.
+
+And what it will definitely do, whether or not it ever factors a single number.
+
+It will force us to answer the question Planck avoided.
+
+Because a quantum computer is not a metaphor. It is a physical object that behaves according to quantum mechanics, and produces results that a classical object cannot. If it works, if you can actually run a computation that no classical machine can follow, then the theory is not just useful. It is, in some sense, true. The superposition was real. The interference was real. The universe really does keep all those possibilities alive until you look.
+
+That is not a philosophical claim. It is an engineering claim, and it is being tested right now, in refrigerators the size of a person, at ten millikelvin, one cycle at a time.
+
+Planck spent his life trying to prove that the quanta were a mistake. He never succeeded. He died in nineteen forty-seven, a few years before the transistor, decades before the first quantum computer. He never saw what his trick would become.
+
+But he knew what it had cost him. In a letter written decades later, Planck admitted it plainly. My futile attempts to fit the elementary quantum of action into the classical theory continued for a number of years, and they cost me a great deal of effort.
+
+We are still crossing that bridge.
+
+The machine at the end of it is not a faster calculator. It is the first machine we have ever built that does not approximate nature. It borrows nature, and gives it back an answer.
+
+And if the answer is yes, if the universe really is made of quanta, and superposition, and probabilities that collapse only when someone looks, then the most beautiful idea in physics is not one we proved.
+
+It is one we are still learning to operate.

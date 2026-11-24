@@ -1,0 +1,39 @@
+So where are we, actually?
+
+The honest answer is: further than the headlines suggest, and much further from the finish line than the headlines imply.
+
+There are now five or six serious approaches, and none of them has won.
+
+Superconducting circuits are the most mature. Google, IBM, and a cluster of startups use them. They are fast, with gates in nanoseconds, and they are manufactured with the tools of the semiconductor industry. Their weakness is wiring. Every qubit needs control lines, and at a million qubits the wiring problem becomes a manufacturing problem of its own. IBM's answer is to move the control electronics into the fridge, stacked in layers above the chip.
+
+Trapped ions are the most precise. Quantinuum's machines hold a handful of ions in an electromagnetic trap and manipulate them with lasers. Their gate fidelities are the best in the world, above ninety-nine point nine percent, in some cases above ninety-nine point nine nine. Their weakness is speed. Gates take microseconds, not nanoseconds. And scaling means shuttling ions around a trap, which is delicate, brilliant, and slow.
+
+Neutral atoms are the fastest-moving field. Instead of ions, you trap neutral atoms in arrays of laser light, optical tweezers, and you can arrange hundreds or thousands of them in arbitrary patterns. In twenty twenty-three, a Harvard-led team used this approach to demonstrate forty-eight logical qubits, and the numbers have been climbing since. The weakness is that neutral-atom gates are slower and less precise than ion traps, and the lasers are power-hungry.
+
+Photonic machines use light. They are attractive because photons don't decohere easily and they can travel down optical fibre. PsiQuantum is trying to build a fault-tolerant machine with silicon photonics, and has said it aims for a utility-scale system before the end of the decade. The weakness is that photons don't interact with each other easily, which makes two-qubit gates hard, and loss is brutal.
+
+And then there is Microsoft, which is trying something entirely different.
+
+In February twenty twenty-five, Microsoft announced a chip called Majorana 1. It was not a general-purpose quantum processor. It was a demonstration of a new kind of qubit, based on a particle called a Majorana fermion. A particle that is its own antiparticle, predicted in nineteen thirty-seven, never definitively observed.
+
+Microsoft's claim was extraordinary. Topological qubits are protected by the topology of the material itself, not by careful control. They should be far more stable than any other kind. If they work, they could skip the error-correction problem almost entirely.
+
+The announcement was met with excitement and deep scepticism, in roughly equal measure. The company published a paper in Nature describing the physics, but the paper did not demonstrate a working topological qubit. It demonstrated evidence for the material platform. Independent physicists pointed out that the central signature, the presence of Majorana modes, has been claimed before and retracted. Microsoft itself had a paper retracted in twenty eighteen after the data could not be reproduced.
+
+Is it real? The honest answer is: not yet proven. The company says it will have a scalable machine by the end of the decade. The physics community is watching, and waiting, and not convinced.
+
+That is not cynicism. It is how the field works. Quantum computing has a long history of beautiful claims that did not survive contact with a lab.
+
+The same month, Amazon announced a different approach: cat qubits. A cat qubit is a superconducting circuit designed so that one kind of error, bit flips, is exponentially suppressed. Amazon claimed a prototype with up to ninety percent reduction in that error channel. It is a real result, on a small device, and it addresses one half of the problem. The other half, phase errors, remains.
+
+So the race is not a single race. It is a set of parallel bets on physics, and nobody knows which one pays.
+
+What is not in doubt is the consequence.
+
+In August twenty twenty-four, NIST finalised the first post-quantum encryption standards: three algorithms designed to resist an attack by a quantum computer. ML-KEM, ML-DSA, SLH-DSA. They are already being deployed in browsers, phones, and secure messaging.
+
+The reason is not that quantum computers can break encryption today. They cannot. The reason is harvest now, decrypt later. An adversary can record encrypted traffic today and wait. If a large quantum computer arrives in fifteen years, everything recorded now becomes readable.
+
+That is a strange kind of threat, because it is the first cryptographic threat that is entirely about the future. It assumes the machine will exist. It prepares for the possibility that it won't.
+
+And that, in a way, is the whole story of quantum computing. We are building a technology on a bet about physics that we cannot yet fully verify.

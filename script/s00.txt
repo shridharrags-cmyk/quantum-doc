@@ -1,0 +1,17 @@
+In December nineteen hundred, a German physicist named Max Planck stood in front of a meeting of the German Physical Society and proposed that energy comes in lumps.
+
+He did not believe it. He thought it was a trick. A mathematical convenience, invented to fix a curve that the physics of his day could not explain. A hot object glows red, then orange, then white, and nobody could say why. Planck found a formula that worked, but only if he assumed that energy is handed out in indivisible packets. He called them quanta. Then he spent years trying to make them go away.
+
+They did not go away.
+
+Within twenty-five years, that trick had become quantum mechanics: the most accurate theory ever written down. More accurate than anything else in science. Tested to one part in a hundred billion. And still, a century later, nobody can tell you what it actually means.
+
+That is where this film begins. Not with computers. With a question.
+
+Is quantum mechanics a description of reality, or is it just the best bookkeeping we have ever managed? Does the universe really behave this way, or does the maths only pretend that it does?
+
+Because something strange happened while physicists argued about that question. We stopped asking what the theory means, and started asking what it can do. And the answer turned out to be: almost anything, if you can build the machine.
+
+A quantum computer is not a faster computer. It is a different kind of thing. It does not compute with numbers. It computes with the rules that govern matter itself.
+
+This is the story of how we got there. The people, the arguments, the photographs, the failures. And the machine we are building now. A machine that borrows the universe, and gives it back an answer.

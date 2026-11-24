@@ -1,0 +1,297 @@
+name: Render the film
+
+on:
+  workflow_dispatch:
+    inputs:
+      shards:
+        description: "number of parallel render shards"
+        default: "16"
+      crf:
+        description: "x264 CRF"
+        default: "19"
+      only:
+        description: "skip to a stage: plan | render | assemble | all"
+        default: "all"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: film-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  smoke:
+    if: ${{ inputs.only == 'smoke' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          python -m pip install -q pillow numpy
+
+      - name: Plan
+        run: |
+          python3 tools/manifest.py
+          python3 prep.py assets/manifest.json
+          python3 timeline.py
+          python3 make_plan.py
+          python3 textgen.py
+          python3 tools/make_srt.py
+
+      - name: Render six shots
+        run: python3 render.py --shard 0 --of 16 --limit 6 --out out
+
+      - name: Probe
+        run: ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate,nb_frames -of default=nw=1 out/seg_00.mp4
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: smoke
+          path: |
+            out/seg_00.mp4
+            shots.json
+            out/quantum.srt
+          retention-days: 2
+
+  plan:
+    if: ${{ inputs.only == 'all' || inputs.only == 'plan' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          python -m pip install -q pillow numpy
+
+      - name: Build plates
+        run: |
+          python3 tools/manifest.py
+          python3 prep.py assets/manifest.json
+
+      - name: Timeline, plan, text layers
+        run: |
+          python3 timeline.py
+          python3 make_plan.py
+          python3 textgen.py
+          python3 tools/make_srt.py
+
+      - name: Audio master
+        run: python3 build_audio.py
+
+      - name: Report
+        run: |
+          df -h /
+          du -sh assets/plates assets/text audio
+          python3 - <<'PY'
+          import json
+          p = json.load(open("shots.json"))
+          n = json.load(open("narration.json"))
+          print("shots", len(p["shots"]), "frames", p["total_frames"])
+          print("film", round(p["total_frames"] / p["fps"], 1), "s")
+          print("audio", round(n["total"], 1), "s")
+          assert abs(p["total_frames"] / p["fps"] - n["total"]) < 0.5, "picture/audio drift"
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plates
+          path: assets/plates
+          retention-days: 2
+          compression-level: 0
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: text
+          path: assets/text
+          retention-days: 2
+          compression-level: 0
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plan
+          path: |
+            shots.json
+            narration.json
+            out/quantum.srt
+          retention-days: 2
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: audio
+          path: audio/master.wav
+          retention-days: 2
+          compression-level: 0
+
+  render:
+    needs: plan
+    if: ${{ inputs.only == 'all' || inputs.only == 'render' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install tools
+        run: |
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          python -m pip install -q pillow numpy
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: plates
+          path: assets/plates
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: text
+          path: assets/text
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: plan
+          path: .
+
+      - name: Render shard ${{ matrix.shard }}
+        run: |
+          export CRF=${{ inputs.crf }}
+          python3 render.py --shard $(( ${{ matrix.shard }} - 1 )) --of 16 --out out
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seg-${{ matrix.shard }}
+          path: out/seg_*.mp4
+          retention-days: 2
+          compression-level: 0
+
+  assemble:
+    needs: render
+    if: ${{ inputs.only == 'all' || inputs.only == 'assemble' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install tools
+        run: |
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          python -m pip install -q pillow numpy
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: seg-*
+          path: out
+          merge-multiple: true
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: audio
+          path: audio
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: plates
+          path: assets/plates
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: plan
+          path: .
+
+      - name: Concat and mux
+        run: |
+          ls -l out/seg_*.mp4
+          cd out
+          for f in $(ls seg_*.mp4 | sort -t_ -k2 -n); do echo "file '$PWD/$f'"; done > list.txt
+          ffmpeg -v error -y -f concat -safe 0 -i list.txt -c copy film_silent.mp4
+          cd ..
+          ffmpeg -v error -y -i out/film_silent.mp4 -i audio/master.wav \
+            -c:v copy -c:a aac -b:a 192k -ar 48000 \
+            -movflags +faststart -shortest \
+            -metadata title="The Machine That Borrows the Universe" \
+            out/film.mp4
+
+      - name: Poster
+        run: python3 tools/poster.py assets/plates/chip_200.jpg out/poster.png
+
+      - name: Verify
+        run: |
+          python3 - <<'PY'
+          import json, subprocess
+          def probe(p):
+              return float(subprocess.check_output([
+                  "ffprobe","-v","error","-show_entries","format=duration",
+                  "-of","csv=p=0",p]).strip())
+          meta = json.load(open("shots.json"))
+          want = meta["total_frames"] / meta["fps"]
+          got = probe("out/film.mp4")
+          print(f"expected {want:.2f}s  got {got:.2f}s")
+          assert abs(want - got) < 1.0, "duration mismatch"
+          frames = json.loads(subprocess.check_output([
+              "ffprobe","-v","error","-count_frames","-select_streams","v:0",
+              "-show_entries","stream=nb_read_frames","-of","json","out/film.mp4"]))
+          n = int(frames["streams"][0]["nb_read_frames"])
+          print("frames", n, "of", meta["total_frames"])
+          assert n == meta["total_frames"], "frame count mismatch"
+          PY
+          ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate \
+            -show_entries format=duration,size -of default=nw=1 out/film.mp4
+          ls -lh out/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: film
+          path: |
+            out/film.mp4
+            out/quantum.srt
+            out/poster.png
+          retention-days: 7
+          compression-level: 0
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.run_number }}
+          name: The Machine That Borrows the Universe (cut ${{ github.run_number }})
+          body: |
+            Rendered on GitHub Actions, ${{ inputs.shards }} shards, CRF ${{ inputs.crf }}.
+            Narration: edge-tts `en-US-AndrewNeural`. Score: Scott Buckley, CC BY 4.0.
+          files: |
+            out/film.mp4
+            out/quantum.srt
+            out/poster.png
+          fail_on_unmatched_files: false

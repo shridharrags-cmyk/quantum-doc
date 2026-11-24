@@ -1,0 +1,39 @@
+The problem is called decoherence, and it is not a small engineering detail. It is the central fact of quantum computing.
+
+A qubit is a quantum system with two states. Not a bit that is both zero and one. That is a cartoon. A qubit is a system described by two complex numbers, amplitudes, whose squares give the probability of measuring zero or one. Before measurement, it can be in a superposition. After measurement, it is not.
+
+Everything in between is coherence. The amplitudes have to stay in a precise relationship, with a precise phase, for the computation to work. And almost everything destroys that relationship. A stray photon. A vibrating atom. A cosmic ray. Heat.
+
+So the first thing you need is cold. Not refrigerator cold. Ten millikelvin. Colder than the cosmic microwave background, which is two point seven kelvin. Colder than anything in the solar system.
+
+That is what a dilution refrigerator is for. It is the machine you have seen in photographs without knowing what you were looking at: a gold-plated chandelier, hanging in a cylinder, surrounded by layers of shielding. At the bottom, a chip the size of a fingernail, sitting at a temperature where the thermal noise is slower than the computation.
+
+The second thing you need is isolation. The chip is shielded from magnetic fields, from radio waves, from vibration. The room around it is a Faraday cage. The wiring that carries signals in is filtered, attenuated, and carefully routed, because a single stray microwave photon can ruin a calculation.
+
+And the third thing you need is speed. A superconducting qubit holds its state for tens or hundreds of microseconds. A gate takes tens of nanoseconds. That is a ratio of thousands. You have time for a few thousand operations before the state decays. Not millions. Thousands.
+
+This is why error correction is not optional.
+
+The first real qubits were built in the late nineteen nineties. In nineteen ninety-five, Juan Ignacio Cirac and Peter Zoller proposed a way to trap ions with electric fields and manipulate them with lasers. In nineteen ninety-nine, a team at NEC in Japan, led by Yasunobu Nakamura, built a superconducting qubit. A tiny circuit with a Josephson junction, behaving like an artificial atom. Both approaches are still with us.
+
+In two thousand, David DiVincenzo wrote down the five criteria a quantum computer has to satisfy. Qubits that can be initialized. A universal set of gates. Long coherence times. A way to read out. And a way to scale.
+
+That list is still the field's report card.
+
+For the next fifteen years, the numbers improved slowly. One qubit became two, then five, then twenty. Fidelities climbed from ninety percent to ninety-nine, then ninety-nine point nine. Each decimal place was a thesis, a career, a decade.
+
+And then, in twenty nineteen, Google put a machine called Sycamore in front of the world and claimed it had done something no classical computer could do.
+
+Sycamore had fifty-three superconducting qubits. The task was random circuit sampling: run a random sequence of gates, measure, repeat. It is deliberately useless. It produces no answer anyone wants. It is a stress test. A way of asking whether the machine can hold a quantum state long enough to do something a classical computer cannot follow.
+
+Google said Sycamore had done in two hundred seconds what would take a classical supercomputer ten thousand years.
+
+IBM immediately disagreed. Their analysis said the same calculation could be done on a classical machine in two and a half days. Not ten thousand years. Two and a half days.
+
+Both numbers were defensible. That is the problem with the word supremacy.
+
+The claim was not that quantum computers are useful. It was that a quantum machine had crossed a line. And the line kept moving, because classical algorithms kept getting better, and classical hardware kept getting faster.
+
+What survived the argument was something more interesting than the claim. Sycamore proved that a programmable quantum machine with more than fifty qubits could be built, calibrated, and run. It proved that the engineering was real.
+
+The theory had been waiting thirty-five years for that.

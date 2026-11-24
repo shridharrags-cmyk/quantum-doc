@@ -1,0 +1,45 @@
+Planck's trick was simple, and outrageous. If energy comes in lumps, then a hot object can only emit light in certain sizes of lump. Small lumps when it is cool, bigger lumps as it heats up. The curve comes out right. Perfectly right. Embarrassingly right.
+
+But a lump is a strange thing for nature to make. A wave can be any size at all. A ripple in a pond can be a millimetre or a mile. A lump has to be exactly one lump.
+
+In nineteen oh five, a young patent clerk in Bern took the idea seriously. Albert Einstein argued that light itself is made of lumps. Photons. And that this explains the photoelectric effect: shine light on a metal, and electrons come off, but only if the light is the right colour, no matter how bright it is. Brighter red light does nothing. Dim blue light works immediately.
+
+Einstein called these packets light quanta. He did not call them photons; that word came later. What matters is that he meant it literally. Not a trick. Not bookkeeping. Light, he said, is a thing that arrives in pieces.
+
+He won the Nobel Prize for that, by the way. Not for relativity. For the lumps.
+
+Then in nineteen thirteen, a young Dane named Niels Bohr pointed the same logic at the atom. Electrons, he said, cannot orbit a nucleus at any distance they like. They are only allowed certain orbits. Certain energies. Jump between them, and the atom emits or absorbs a photon of exactly the right colour.
+
+It worked. Hydrogen's spectrum, those thin bright lines that had been measured in laboratories and puzzled over for decades, fell out of the arithmetic. The atom had a staircase, not a ramp.
+
+And then the staircase collapsed into something much stranger.
+
+In nineteen twenty-four, Louis de Broglie asked the question nobody had thought to ask. If waves can behave like particles, why shouldn't particles behave like waves? An electron, he suggested, is a wave. A tiny, restless, standing wave.
+
+Three years later, in nineteen twenty-seven, physicists took a photograph that made the idea impossible to ignore. In Aberdeen, a young man named George Paget Thomson fired electrons at a thin metal foil. They came out as rings. Diffraction rings. The kind you get from waves. The kind you get from light.
+
+Electrons were waves. And they were particles. At the same time. Depending on how you looked.
+
+That photograph is one of the most important images in the history of science, and almost nobody has seen it.
+
+By then, the theory had already been rewritten twice. In nineteen twenty-five, Werner Heisenberg, stranded on a windswept island in the North Sea with hay fever, invented a mathematics in which quantities do not commute. Where A times B is not the same as B times A. He did not know what it meant. Neither did anyone else.
+
+A year later, Erwin Schrodinger wrote down an equation that described the electron as a wave, spreading through space. It was beautiful, and it was wrong in the way that all useful things are wrong. It described the wave. It did not describe what the wave was.
+
+Max Born supplied the answer that nobody wanted. The wave is not the electron. The wave is a probability. Square it, and you get the odds of finding the electron here rather than there.
+
+Nature, at bottom, is a casino.
+
+Einstein hated that. He wrote to Born in nineteen twenty-six: "Quantum mechanics is certainly imposing. But an inner voice tells me that it is not yet the real thing. The theory says a lot, but does not really bring us any closer to the secret of the old one. I, at any rate, am convinced that He is not playing at dice."
+
+He was wrong. Or he was right. We still don't know.
+
+In nineteen twenty-seven, the two sides met in Brussels. The fifth Solvay Conference. Twenty-nine physicists in one room, seventeen of whom would win Nobel Prizes. The photograph from that week is the most famous group portrait in science: Einstein in the front row, Bohr beside him, Marie Curie between them, Heisenberg and Pauli standing behind.
+
+They argued about whether the universe is deterministic. Einstein kept proposing thought experiments designed to break quantum mechanics. Bohr kept answering them, sometimes overnight, sometimes at breakfast.
+
+And in nineteen thirty-five, Einstein, Podolsky and Rosen published the sharpest version of the objection. Take two particles that interact, then separate them by a light-year. Measure one, and you instantly know something about the other. Not because you disturbed it. Because the theory says the two were never really separate.
+
+Einstein called it spooky action at a distance. He meant it as an insult.
+
+It was a measurement.

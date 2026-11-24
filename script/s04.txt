@@ -1,0 +1,39 @@
+Here is the uncomfortable arithmetic of quantum computing.
+
+A physical qubit is bad. It fails. Not occasionally. Constantly. Coherence decays. Gates are imperfect. Readout is noisy. The best qubits in the world, in twenty twenty-four, had error rates around one in a thousand per gate. That sounds good. It is catastrophic.
+
+A useful algorithm might need a billion gates. At one in a thousand, the computation is destroyed long before it finishes. Even at one in ten thousand, you lose.
+
+The solution is not better qubits, though better qubits help. The solution is to stop using physical qubits and start using logical ones: a logical qubit made of many physical qubits, wired together so that they correct each other's errors.
+
+This is quantum error correction, and it is the most important idea in the field.
+
+The simplest version is the surface code. Imagine a grid of qubits. Some hold data. Some are measured constantly, checking the parity of their neighbours. When a measurement flips, you know something went wrong nearby. You don't know what, and you don't need to. You just need enough checks to localise the error and correct it.
+
+The catch: you need a lot of physical qubits per logical qubit. Early estimates were thousands. Later ones, hundreds. And the whole scheme only works if the physical error rate is below a threshold. Roughly one percent, for the surface code.
+
+Above the threshold, adding more qubits makes things worse. Below it, adding more qubits makes things better. That is the whole game. Get below threshold, and scale.
+
+For twenty years, nobody could get below threshold. The qubits were too noisy, the grids too small, the measurements too slow.
+
+In December twenty twenty-four, Google published a result that changed that.
+
+The machine was called Willow. It had one hundred and five superconducting qubits, and it was designed to test one thing: whether increasing the size of the error-correcting grid actually reduced the error.
+
+They built grids of distance three, five, and seven. A distance seven surface code spends ninety-seven physical qubits to carry one logical qubit. Forty-nine of them hold the data. The rest do nothing but check. And they measured the logical error rate per cycle: zero point one four three percent.
+
+That number by itself is not impressive. What matters is the trend. Each time they increased the distance by two, the logical error rate fell by a factor of about two point one four. Not stayed the same. Fell.
+
+For the first time, a quantum error-correcting code was performing better as it got bigger. Below threshold. The thing the theory promised, in hardware, on a chip.
+
+The same paper included a second result, and this one made headlines. Willow ran a random circuit sampling benchmark in under five minutes. Google estimated that the same calculation would take a classical supercomputer ten septillion years. A one followed by twenty-five zeros.
+
+That number is almost meaningless. It is a statement about one benchmark, on one day, against one classical algorithm. It is not a statement about useful computing. Google was careful about this in the paper. The press was not.
+
+But the error-correction result is not meaningless. It is the first real evidence that the scaling law works. And scaling laws are how technology stops being a demonstration and starts being a tool.
+
+There is a catch, and it is worth saying clearly. A logical qubit that fails once every thousand cycles is not a good qubit. Willow's logical qubit still fails far too often to run a long algorithm. The result is a proof of direction, not a proof of arrival.
+
+To run Shor's algorithm against a two thousand bit RSA key, you would need thousands of logical qubits, each made of hundreds of physical qubits, each operating for millions of cycles without failing. That is not one generation of hardware away. It might be three.
+
+And yet, the direction is now established. Before Willow, below-threshold was a hope. After Willow, it is a measurement.
