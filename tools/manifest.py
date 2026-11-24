@@ -33,6 +33,7 @@ def main():
         man.append(dict(id=key, src="src/" + f,
                         treat="duo" if key in DUO else "color",
                         focus=FOCUS.get(key, [0.5, 0.5])))
+    os.makedirs(os.path.join(ROOT, "assets"), exist_ok=True)
     with open(os.path.join(ROOT, "assets", "manifest.json"), "w") as fh:
         json.dump(man, fh, indent=1)
     print("manifest", len(man), "stills")
