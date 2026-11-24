@@ -243,11 +243,13 @@ def proc_frame(shot, i, n, W, H):
         d.text((cx + 42, 434), "data qubits  (d²)", font=fm, fill=IVORY)
         d.rectangle([cx, 486, cx + 26, 512], outline=(86, 118, 128), width=3)
         d.text((cx + 42, 488), "check qubits  (d²−1)", font=fm, fill=IVORY)
-        for k, (dist, phys) in enumerate(((3, 17), (5, 49), (7, 97))):
-            d.text((cx, 588 + k * 42), f"d = {dist}", font=fm, fill=DIM)
-        for k, (dist, phys) in enumerate(((3, 17), (5, 49), (7, 97))):
-            d.text((cx + 150, 588 + k * 42), f"→  {phys} physical qubits", font=fm,
+        rows = ((3, "17", ""), (5, "49", ""), (7, "101", "Google's memory"))
+        for k, (dist, phys, note) in enumerate(rows):
+            d.text((cx, 578 + k * 40), f"d = {dist}", font=fm, fill=DIM)
+            d.text((cx + 130, 578 + k * 40), f"→  {phys} physical qubits", font=fm,
                    fill=IVORY if dist == 7 else DIM)
+            if note:
+                d.text((cx + 130, 604 + k * 40), note, font=fm, fill=GOLD)
         return im
     if proc == "chart":
         im = Image.new("RGB", (W, H), INK)

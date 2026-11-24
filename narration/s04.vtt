@@ -155,134 +155,138 @@ It had one hundred and five superconducting qubits, and it was designed to test 
 They built grids of distance three, five, and seven.
 
 40
-00:02:02,800 --> 00:02:09,350
-A distance seven surface code spends ninety-seven physical qubits to carry one logical qubit.
+00:02:02,800 --> 00:02:08,750
+Their distance seven chip spends a hundred and one physical qubits to carry one logical qubit.
 
 41
-00:02:09,350 --> 00:02:11,225
+00:02:08,750 --> 00:02:10,625
 Forty-nine of them hold the data.
 
 42
-00:02:11,225 --> 00:02:13,062
+00:02:10,625 --> 00:02:12,462
 The rest do nothing but check.
 
 43
-00:02:13,062 --> 00:02:18,387
+00:02:12,462 --> 00:02:17,787
 And they measured the logical error rate per cycle: zero point one four three percent.
 
 44
-00:02:18,387 --> 00:02:20,837
+00:02:17,787 --> 00:02:20,237
 That number by itself is not impressive.
 
 45
-00:02:20,837 --> 00:02:22,450
+00:02:20,237 --> 00:02:21,850
 What matters is the trend.
 
 46
-00:02:22,450 --> 00:02:29,250
+00:02:21,850 --> 00:02:28,650
 Each time they increased the distance by two, the logical error rate fell by a factor of about two point one four.
 
 47
-00:02:29,250 --> 00:02:30,437
+00:02:28,650 --> 00:02:29,837
 Not stayed the same.
 
 48
-00:02:30,437 --> 00:02:31,137
+00:02:29,837 --> 00:02:30,537
 Fell.
 
 49
-00:02:31,137 --> 00:02:36,200
+00:02:30,537 --> 00:02:35,600
 For the first time, a quantum error-correcting code was performing better as it got bigger.
 
 50
-00:02:36,200 --> 00:02:37,537
+00:02:35,600 --> 00:02:36,937
 Below threshold.
 
 51
-00:02:37,537 --> 00:02:41,037
+00:02:36,937 --> 00:02:40,437
 The thing the theory promised, in hardware, on a chip.
 
 52
-00:02:41,037 --> 00:02:45,262
+00:02:40,437 --> 00:02:44,662
 The same paper included a second result, and this one made headlines.
 
 53
-00:02:45,262 --> 00:02:49,675
+00:02:44,662 --> 00:02:49,075
 Willow ran a random circuit sampling benchmark in under five minutes.
 
 54
-00:02:49,675 --> 00:02:55,937
+00:02:49,075 --> 00:02:55,337
 Google estimated that the same calculation would take a classical supercomputer ten septillion years.
 
 55
-00:02:55,937 --> 00:02:58,487
+00:02:55,337 --> 00:02:57,887
 A one followed by twenty-five zeros.
 
 56
-00:02:58,487 --> 00:03:00,662
+00:02:57,887 --> 00:03:00,062
 That number is almost meaningless.
 
 57
-00:03:00,662 --> 00:03:06,325
+00:03:00,062 --> 00:03:05,725
 It is a statement about one benchmark, on one day, against one classical algorithm.
 
 58
-00:03:06,325 --> 00:03:08,825
+00:03:05,725 --> 00:03:08,225
 It is not a statement about useful computing.
 
 59
-00:03:08,825 --> 00:03:11,050
+00:03:08,225 --> 00:03:10,450
 Google was careful about this in the paper.
 
 60
-00:03:11,050 --> 00:03:12,275
+00:03:10,450 --> 00:03:11,675
 The press was not.
 
 61
-00:03:12,275 --> 00:03:15,325
+00:03:11,675 --> 00:03:14,725
 But the error-correction result is not meaningless.
 
 62
-00:03:15,325 --> 00:03:18,525
+00:03:14,725 --> 00:03:17,925
 It is the first real evidence that the scaling law works.
 
 63
-00:03:18,525 --> 00:03:23,687
+00:03:17,925 --> 00:03:23,087
 And scaling laws are how technology stops being a demonstration and starts being a tool.
 
 64
-00:03:23,687 --> 00:03:26,562
+00:03:23,087 --> 00:03:25,962
 There is a catch, and it is worth saying clearly.
 
 65
-00:03:26,562 --> 00:03:31,637
+00:03:25,962 --> 00:03:31,037
 A logical qubit that fails once every thousand cycles is not a good qubit.
 
 66
-00:03:31,637 --> 00:03:36,500
+00:03:31,037 --> 00:03:35,900
 Willow's logical qubit still fails far too often to run a long algorithm.
 
 67
-00:03:36,500 --> 00:03:40,312
+00:03:35,900 --> 00:03:39,712
 The result is a proof of direction, not a proof of arrival.
 
 68
-00:03:40,312 --> 00:03:52,812
+00:03:39,712 --> 00:03:52,212
 To run Shor's algorithm against a two thousand bit RSA key, you would need thousands of logical qubits, each made of hundreds of physical qubits, each operating for millions of cycles without failing.
 
 69
-00:03:52,812 --> 00:03:55,412
+00:03:52,212 --> 00:03:54,812
 That is not one generation of hardware away.
 
 70
-00:03:55,412 --> 00:03:56,575
+00:03:54,812 --> 00:03:55,975
 It might be three.
 
 71
-00:03:56,575 --> 00:03:59,412
+00:03:55,975 --> 00:03:58,812
 And yet, the direction is now established.
 
 72
-00:03:59,412 --> 00:04:02,187
+00:03:58,812 --> 00:04:01,587
 Before Willow, below-threshold was a hope.
+
+73
+00:04:01,587 --> 00:04:03,700
+After Willow, it is a measurement.
 

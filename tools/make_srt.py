@@ -56,13 +56,17 @@ def main():
             rows.append((a + start, min(b + start, meta["total"]), text))
     rows.sort(key=lambda r: r[0])
 
-    # merge cues that overlap so players never flicker two lines at once
+    # edge-tts cues are contiguous (each starts where the last one ended), so
+    # only genuine overlap is merged. Adjacent cues stay separate lines.
     merged = []
     for a, b, text in rows:
-        if merged and a < merged[-1][1] + 0.02:
+        if merged and a < merged[-1][1] - 0.05:
             pa, pb, pt = merged[-1]
             merged[-1] = (pa, max(pb, b), pt if text in pt else (pt + " " + text))
         else:
+            if merged and a < merged[-1][1]:
+                pa, pb, pt = merged[-1]
+                merged[-1] = (pa, max(pa, a - 0.02), pt)
             merged.append((a, b, text))
 
     out = os.path.join(ROOT, "out", "quantum.srt")

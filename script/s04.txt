@@ -20,7 +20,7 @@ In December twenty twenty-four, Google published a result that changed that.
 
 The machine was called Willow. It had one hundred and five superconducting qubits, and it was designed to test one thing: whether increasing the size of the error-correcting grid actually reduced the error.
 
-They built grids of distance three, five, and seven. A distance seven surface code spends ninety-seven physical qubits to carry one logical qubit. Forty-nine of them hold the data. The rest do nothing but check. And they measured the logical error rate per cycle: zero point one four three percent.
+They built grids of distance three, five, and seven. Their distance seven chip spends a hundred and one physical qubits to carry one logical qubit. Forty-nine of them hold the data. The rest do nothing but check. And they measured the logical error rate per cycle: zero point one four three percent.
 
 That number by itself is not impressive. What matters is the trend. Each time they increased the distance by two, the logical error rate fell by a factor of about two point one four. Not stayed the same. Fell.
 
